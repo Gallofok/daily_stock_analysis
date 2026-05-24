@@ -43,9 +43,13 @@ jobs:
       - name: 随机延迟（避免固定时间访问）
         run: sleep $((RANDOM % 60))  # 随机延迟0-60秒启动
       
-      - name: 检出代码
+      - name: 检出 daily_stock_analysis
         uses: actions/checkout@v5
-      
+        with:
+          repository: Gallofok/daily_stock_analysis
+          path: daily_stock_analysis
+
+    
       - name: 设置 Python 环境
         uses: actions/setup-python@v6
         with:
